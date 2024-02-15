@@ -9,6 +9,7 @@ const apiUrl = 'https://fdnd.directus.app/items'
 
 // Haal alle squads uit de WHOIS API op
 const squadData = await fetchJson(apiUrl + '/squad')
+const personData = await fetchJson(apiUrl + '/person') // TOEGEVOEGD VAN ZOE
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -56,4 +57,32 @@ app.set('port', process.env.PORT || 8000)
 app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
+})
+
+
+
+
+
+// Squad pagina
+// Haal alle personen uit de betreffende squad uit de WHOIS API op
+ 
+// app.get('/squad', function (request, response) {
+ 
+//   fetchJson('/items/person/?filter={"squad_id":3}&sort=name').then((apiData) => {
+//     response.render('squad', {persons: apiData.data})
+
+//     // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
+//     response.render('person', {person: apiData.data, squads: squadData.data})
+//   })
+
+// })
+
+
+// Maak een GET route voor een detailpagina met een request parameter id
+app.get('/squad/:id', function (request, response) {
+  // Gebruik de request parameter id en haal de juiste squad uit de WHOIS API op
+  fetchJson(apiUrl + '/squad/' + request.params.id).then((apiData) => {  // /person/?filter={"squad_id":3}&sort=name
+    // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
+    response.render('squad', {squad: apiData.data, person: personData.data, squads: squadData.data})
+  })
 })

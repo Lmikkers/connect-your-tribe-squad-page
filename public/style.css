@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(126deg, transparent 50%, #e3e3e3 30%);
+}
+
+.squadNavBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+
+}
+
+ul.squadID {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2rem;
+}
+
+
+ul.squads {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2rem;
+    
+    width: 100%;
+    overflow-x: scroll;
+}
+ul.squads li {
+    background: #afafaf;
+    width: 22vw;
+    height: 60vh;
+    border-radius: 20px;
+}
