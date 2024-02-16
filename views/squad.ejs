@@ -7,13 +7,39 @@
 <main>
   <ul>
     <!-- items/person/?filter={"squad_id":3}&sort=name -->
-    <% person.forEach(person => { %>
+
+    <!-- Laat alleen de geselecteerde squad id zien en daarvan de personen uit lezen -->
+
+    <% squads.forEach(squad => { %>
+      
+      <li>
+        <a href="./squad/<%= squad.id %>"><%= squad.id %></a>
+      </li>
+
+    <% }) %>
+
+    <% persons.forEach(person => { %>
+      <li>
+        <div class="img-box">
+            <img src="<%= person.avatar.includes('https') ? person.avatar : '/assets/person.png' %>">
+        </div>
+        <hr>
+          <h2><%= person.name + " " + person.prefix + " " + person.surname %></h2>
+          <p>Nickname: <%= person.nickname != "" ? person.nickname : 'Ik heb geen...' %></p>
+          <div class="button-row">
+              <a class="button" href="<%= person.github_handle %>"><i class="fa-brands fa-github"></i> Github</a>
+          </div>
+      </li>
+      <% }) %>
+
+    <!-- squads naar person -->
+    <!-- <% squads.forEach(person => { %> 
       <li>
         <a href="https://<%= person.website %>">
           <h2><%= person.name %> <%= person.prefix %> <%= person.surname %> </h2>
         </a>
       </li>
-    <% }) %>
+    <% }) %> -->
   </ul>
 </main>
  

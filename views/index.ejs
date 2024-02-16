@@ -1,7 +1,8 @@
 <%- include('./partials/head') %>
 
-<!-- <h2>Students</h2>
-<ul>
+<!-- <h2>Students</h2> -->
+<!-- aangezet voor practicum -->
+<!-- <ul>
   <% persons.forEach(person => { %>
     <li><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %></li>
   <% }) %>
@@ -12,23 +13,29 @@
   <div class="squadNavBar">
     <h1>Squad</h1>
 
-    <ul class="squadID">
+    <ul>
       <% squads.forEach(squad => { %>
-        <li><a href="./squad/<%= squad.id %>">Squad <%= squad.id %></a></li>
+        <!-- <li><a href="./squad/?filter={squad_id:<%= squad.id %>}">Squad <%= squad.id %></a></li> -->
+        <li>
+          <a href="./squad/<%= squad.id %>"><span>Squad</span> <%= squad.id %></a>
+        </li>
         <!-- https://fdnd.directus.app/items/person/?filter={%22squad_id%22:3}&sort=name -->
       <% }) %>
     </ul>
   </div>
 
-  <ul class="squads">
-    <li><a href="">Naam</a></li>
-    <li><a href="">Naam</a></li>
-    <li><a href="">Naam</a></li>
-    <li><a href="">Naam</a></li>
-    <li><a href="">Naam</a></li>
-    <li><a href="">Naam</a></li>
-    <li><a href="">Naam</a></li>
-  </ul>
+  <div class="containerPersons">
+    <ul class="squads">
+      <% persons.forEach(person => { %>
+        <li>
+          <a href="./person/<%= person.id %>">
+            <h4><%= person.name %> | Squad-id: <%= person.squad_id %></h4>
+            <img src="<%= person.avatar %>">
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
   
 </section>
 
