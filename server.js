@@ -60,15 +60,32 @@ app.get('/person/:id', function (request, response) {
   })
 })
 
-// (NIEUW)
+
+// SQUAD (NIEUW)
 // Maak een GET route voor een squad detailpagina met een request parameter id
+// app.get('/squad/:id', function (request, response) {
+//   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
+//   fetchJson(apiUrl + '/squad/' + request.params.id).then((apiData) => {
+//     // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
+//     response.render('squad', {squad: apiData.data, person: apiData.data, squads: squadData.data})
+//   })
+// })
+
 app.get('/squad/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
   fetchJson(apiUrl + '/squad/' + request.params.id).then((apiData) => {
-    // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
-    response.render('squad', {squad: apiData.data, person: apiData.data, squads: squadData.data})
+    fetchJson(apiUrl + '/person?filter[squad_id]=' + request.params.id).then((personData) => {
+      // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
+      response.render('squad', {squad: apiData.data, persons: personData.data, squads: squadData.data})
+    })
   })
 })
+
+
+
+
+
+
 
 // Maak een GET route voor find/filter dingen (NIEUW)
 app.get('/filter/:q', function (request, response) {
@@ -92,21 +109,5 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
-
-
-
-
-
-
-// WERKT HALF LAAT WEL DE SQUAD ID IN MAAR NIET DE PERSONEN UIT DIE SQUAD
-// Squad pagina
-// Maak een GET route voor een squad detailpagina met een request parameter id
-// app.get('/squad/:id', function (request, response) {
-//   // Gebruik de request parameter id en haal de juiste squad uit de WHOIS API op
-//   fetchJson(apiUrl + '/squad/' + request.params.id).then((apiData) => {  // /person/?filter={"squad_id":3}&sort=name
-//     // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
-//     response.render('squad', {squad: apiData.data, person: personData.data, squads: squadData.data})
-//   })
-// })
 
 console.log("Dit is de server");

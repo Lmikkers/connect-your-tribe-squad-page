@@ -14,10 +14,11 @@
     <h1>Squad</h1>
 
     <ul>
-      <% squads.forEach(squad => { %>
+      <!-- Met slice zorg ik ervoor dat de eerste 2 van de squads niet worden weergegeven (2e jaars, staat leeg) -->
+      <% squads.slice(2).forEach(squad => { %>
         <!-- <li><a href="./squad/?filter={squad_id:<%= squad.id %>}">Squad <%= squad.id %></a></li> -->
         <li>
-          <a href="./squad/<%= squad.id %>"><span>Squad</span> <%= squad.id %></a>
+          <a href="./squad/<%= squad.id %>"><span>Squad</span> <%= squad.id %> | <%= squad.name %></a>
         </li>
         <!-- https://fdnd.directus.app/items/person/?filter={%22squad_id%22:3}&sort=name -->
       <% }) %>

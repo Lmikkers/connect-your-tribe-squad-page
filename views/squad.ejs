@@ -1,46 +1,50 @@
 <%- include('./partials/head') %>
 <header>
   <a href="/">Back</a>
-  <h1><%= squad.name %></h1>
+  <h1>Squad <%= squad.name %></h1>
 </header>
  
 <main>
+  <!-- Bekijk de andere squads: -->
   <ul>
-    <!-- items/person/?filter={"squad_id":3}&sort=name -->
-
-    <!-- Laat alleen de geselecteerde squad id zien en daarvan de personen uit lezen -->
-
-    <% squads.forEach(squad => { %>
-      
-      <li>
-        <a href="./squad/<%= squad.id %>"><%= squad.id %></a>
-      </li>
-
+    <li><h3>Bekijk de andere squads:</h3></li>
+    <!-- Met slice zorg ik ervoor dat de eerste 2 van de squads niet worden weergegeven (2e jaars, staat leeg) -->
+    <% squads.slice(2).forEach(squad => { %>
+      <li ><a href="/squad/<%= squad.id %>">Squad <%= squad.name %></a></li>
     <% }) %>
+  </ul>
 
-    <% persons.forEach(person => { %>
-      <li>
-        <div class="img-box">
+  <div class="containerPersons">
+    <ul class="squads">
+      <!-- maak een list item aan voor elke persoon -->
+      <% persons.forEach(person => { %>
+        <li>
+          <a href="">
             <img src="<%= person.avatar.includes('https') ? person.avatar : '/assets/person.png' %>">
+
+            <h2><%= person.name + " " + person.prefix + " " + person.surname %></h2>
+            <p>Nickname: <%= person.nickname != "" ? person.nickname : 'Ik heb geen...' %></p>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+
+  <!-- <ul>
+    <% persons.forEach(person => { %>
+      <li class="card-item">
+        <div class="img-box">
+            <img src="<%= person.avatar.includes('https') ? person.avatar : '/assets/person.png' %>" height="200px">
         </div>
-        <hr>
           <h2><%= person.name + " " + person.prefix + " " + person.surname %></h2>
           <p>Nickname: <%= person.nickname != "" ? person.nickname : 'Ik heb geen...' %></p>
           <div class="button-row">
               <a class="button" href="<%= person.github_handle %>"><i class="fa-brands fa-github"></i> Github</a>
           </div>
       </li>
-      <% }) %>
-
-    <!-- squads naar person -->
-    <!-- <% squads.forEach(person => { %> 
-      <li>
-        <a href="https://<%= person.website %>">
-          <h2><%= person.name %> <%= person.prefix %> <%= person.surname %> </h2>
-        </a>
-      </li>
-    <% }) %> -->
-  </ul>
+    <% }) %>
+  </ul> -->
+  
 </main>
  
 <%- include('./partials/foot') %>
