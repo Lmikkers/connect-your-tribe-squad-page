@@ -1,5 +1,8 @@
 // 1. Opzetten van de webserver
 
+// Zorg dat werken met request data makkelijker wordt
+app.use(express.urlencoded({extended: true}))
+
 // Importeer het npm pakket express uit de node_modules map
 import express from 'express'
 
@@ -27,6 +30,8 @@ app.use(express.static('public'))
 
 
 // 2. Routes die  HTTP Request and Responses afhandelen
+// Voor de messages
+const messages = []
 
 // Maak een GET route voor de index
 // Stap 1
@@ -41,12 +46,19 @@ app.get('/', function (request, response) {
     
     // Stap 4
     // HTML maken op basis van JSON data (index.ejs)
-    response.render('index', {persons: apiData.data, squads: squadData.data})
+    response.render('index', 
+      {persons: apiData.data, 
+        squads: squadData.data,
+        messages: messages
+      })
   })
 })
 
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
+  // Voeg het nieuwe bericht toe aan de message array
+  messages.push(request.body.bericht)
+
   // Er is nog geen afhandeling van POST, redirect naar GET op /
   response.redirect(303, '/')
 })

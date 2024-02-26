@@ -1,49 +1,41 @@
 <%- include('./partials/head') %>
-<header>
+<!-- <header>
   <a href="/">Back</a>
   <h1>Squad <%= squad.name %></h1>
-</header>
+</header> -->
  
 <main>
-  <!-- Bekijk de andere squads: -->
-  <ul>
-    <li><h3>Bekijk de andere squads:</h3></li>
-    <!-- Met slice zorg ik ervoor dat de eerste 2 van de squads niet worden weergegeven (2e jaars, staat leeg) -->
-    <% squads.slice(2).forEach(squad => { %>
-      <li ><a href="/squad/<%= squad.id %>">Squad <%= squad.name %></a></li>
-    <% }) %>
-  </ul>
+  <section class="squadPage">
+    <div>
+      <a href="/">Back</a>
+      <h1>Squad <%= squad.name %></h1>
+    </div>
 
-  <div class="containerPersons">
-    <ul class="squads">
-      <!-- maak een list item aan voor elke persoon -->
-      <% persons.forEach(person => { %>
-        <li>
-          <a href="">
-            <img src="<%= person.avatar.includes('https') ? person.avatar : '/assets/person.png' %>">
-
-            <h2><%= person.name + " " + person.prefix + " " + person.surname %></h2>
-            <p>Nickname: <%= person.nickname != "" ? person.nickname : 'Ik heb geen...' %></p>
-          </a>
-        </li>
+    <!-- Bekijk de andere squads: -->
+    <ul>
+      <li><h3>Bekijk de andere squads:</h3></li>
+      <!-- Met slice zorg ik ervoor dat de eerste 2 van de squads niet worden weergegeven (2e jaars, staat leeg) -->
+      <% squads.slice(2).forEach(squad => { %>
+        <li ><a href="/squad/<%= squad.id %>">Squad <%= squad.name %></a></li>
       <% }) %>
     </ul>
-  </div>
 
-  <!-- <ul>
-    <% persons.forEach(person => { %>
-      <li class="card-item">
-        <div class="img-box">
-            <img src="<%= person.avatar.includes('https') ? person.avatar : '/assets/person.png' %>" height="200px">
-        </div>
-          <h2><%= person.name + " " + person.prefix + " " + person.surname %></h2>
-          <p>Nickname: <%= person.nickname != "" ? person.nickname : 'Ik heb geen...' %></p>
-          <div class="button-row">
-              <a class="button" href="<%= person.github_handle %>"><i class="fa-brands fa-github"></i> Github</a>
-          </div>
-      </li>
-    <% }) %>
-  </ul> -->
+    <div class="containerPersons">
+      <ul class="squads">
+        <!-- maak een list item aan voor elke persoon -->
+        <% persons.forEach(person => { %>
+          <li>
+            <a href="/person/<%= person.id %>">
+              <img src="<%= person.avatar.includes('https') ? person.avatar : '/assets/person.png' %>">
+
+              <h2><%= person.name + " " + person.prefix + " " + person.surname %></h2>
+              <p>Nickname: <%= person.nickname != "" ? person.nickname : 'Ik heb geen...' %></p>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </section>
   
 </main>
  

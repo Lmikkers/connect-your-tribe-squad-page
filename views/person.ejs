@@ -2,8 +2,29 @@
 
 <a href="/">Back</a>
 
-<h2><%= person.name %></h2>
+<article>
+    <h2><%= person.name %></h2>
+    <p>Squad: <%= person.squad_id %>
+    <p><%= person.bio %></p>    
+</article>
 
-<p>Squad: <%= person.squad_id %>
+<section>
+    <h2>Comments</h2>
+    <ul>
+        <% messages.forEach(message => { %>
+            <li><%= message.name %> <%= message.text %></li>
+        <% }) %>
+    </ul>
+
+    <form method="POST" action="/person/<%= person.id %>">
+        <label for="">
+            <input type="text" name="naam">
+        </label>
+        <label for="">
+            <textarea name="bericht" id="" cols="30" rows="10"></textarea>
+        </label>
+    </form>
+</section>
+
 
 <%- include('./partials/foot') %>
