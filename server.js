@@ -1,8 +1,5 @@
 // 1. Opzetten van de webserver
 
-// Zorg dat werken met request data makkelijker wordt
-app.use(express.urlencoded({extended: true}))
-
 // Importeer het npm pakket express uit de node_modules map
 import express from 'express'
 
@@ -27,6 +24,9 @@ app.set('views', './views')
 
 // Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
 app.use(express.static('public'))
+
+// Zorg dat werken met request data makkelijker wordt
+app.use(express.urlencoded({extended: true}))
 
 
 // 2. Routes die  HTTP Request and Responses afhandelen
@@ -58,6 +58,7 @@ app.get('/', function (request, response) {
 app.post('/', function (request, response) {
   // Voeg het nieuwe bericht toe aan de message array
   messages.push(request.body.bericht)
+  messages.push(request.body.name)
 
   // Er is nog geen afhandeling van POST, redirect naar GET op /
   response.redirect(303, '/')
@@ -68,7 +69,12 @@ app.get('/person/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
   fetchJson(apiUrl + '/person/' + request.params.id).then((apiData) => {
     // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
-    response.render('person', {person: apiData.data, squads: squadData.data})
+    response.render('person', 
+    {
+      person: apiData.data,
+      squads: squadData.data,
+      messages: messages
+    })
   })
 })
 

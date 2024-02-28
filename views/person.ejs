@@ -2,27 +2,34 @@
 
 <a href="/">Back</a>
 
-<article>
+<article class="personDetail">
     <h2><%= person.name %></h2>
-    <p>Squad: <%= person.squad_id %>
-    <p><%= person.bio %></p>    
+    <div>
+        <img src="<%= person.avatar.includes('https') ? person.avatar : '/assets/person.png' %>">
+        <div>
+            <p>Squad: <%= person.squad_id %>
+            <p><%= person.bio %></p>   
+        </div>
+    </div>
 </article>
 
-<section>
+<section class="commentSection">
     <h2>Comments</h2>
     <ul>
         <% messages.forEach(message => { %>
-            <li><%= message.name %> <%= message.text %></li>
+            <li> <%= message.name %> <%= message.text %></li>
         <% }) %>
     </ul>
 
     <form method="POST" action="/person/<%= person.id %>">
-        <label for="">
-            <input type="text" name="naam">
+        <label for="name">
+            <input type="text" id="name" name="name">
         </label>
-        <label for="">
-            <textarea name="bericht" id="" cols="30" rows="10"></textarea>
+        <label for="bericht">
+            <textarea name="bericht" id="bericht" cols="30" rows="10"></textarea>
         </label>
+
+        <button type="submit">Verstuur comment</button>
     </form>
 </section>
 

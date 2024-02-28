@@ -21,9 +21,14 @@ h1 {
     text-transform: uppercase;
     font-weight: bold;
 }
+.container {
+    max-width: 90vw;
+    margin: 0 auto;
+}
 
 
-section {
+section.homePage,
+section.squadPage {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -71,6 +76,10 @@ section {
 }
 .containerFilter button {
     grid-column: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     background: black;
     border-radius: 4px;
@@ -85,6 +94,9 @@ section {
 }
 .containerFilter button:hover {
     background-color: #1e1e1e;
+}
+.containerFilter button img {
+    width: 1.5rem;
 }
 
 .containerPersons {
@@ -137,6 +149,52 @@ ul.squads li a {
     bottom: 1rem;
 }
 
+
+/* SQUAD PAGE */ 
+.squadPage .squads li h2 {
+    position: absolute;
+    bottom: 3rem;
+    color: white;
+    background: #e5e5e53b;
+    padding: 0.5rem;
+}
+.squadPage ul.squads li p {
+    position: absolute;
+    bottom: 1rem;
+    color: white;
+}
+/* END SQUAD PAGE */
+
+
+/* PERSON DETAIL PAGE */
+.personDetail {
+
+}
+
+.commentSection {
+
+}
+/* END PERSON DETAIL PAGE */
+
+
+/* SCROLLBAR STYLES */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+/* END SCROLLBAR STYLES */
 
 
 /* RESPONSIVE */
