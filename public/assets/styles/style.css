@@ -148,6 +148,29 @@ ul.squads li a {
     position: absolute;
     bottom: 1rem;
 }
+.controls {
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.controls button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 3.5rem;
+    height: 3.5rem;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    z-index: 1;
+    cursor: pointer;
+}
+.controls button img {
+    width: 0.75rem;
+}
 
 
 /* SQUAD PAGE */ 
@@ -167,13 +190,13 @@ ul.squads li a {
 
 
 /* PERSON DETAIL PAGE */
-.personDetail {
+/* .personDetail {
 
 }
 
 .commentSection {
 
-}
+} */
 /* END PERSON DETAIL PAGE */
 
 

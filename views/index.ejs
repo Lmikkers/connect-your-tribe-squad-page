@@ -32,7 +32,12 @@
 
   <div class="containerPersons">
 
-    <ul class="squads">
+    <div class="controls">
+      <button class="prevBtn"><img src="/assets/images/chevronLeft.svg" alt=""></button>
+      <button class="nextBtn"><img src="/assets/images/chevronRight.svg" alt=""></button>
+    </div>
+
+    <ul class="squads slider">
       <% persons.forEach(person => { %>
         <li>
           <a href="./person/<%= person.id %>">
@@ -43,6 +48,7 @@
       <% }) %>
     </ul>
   </div>
+
   
 </section>
 
