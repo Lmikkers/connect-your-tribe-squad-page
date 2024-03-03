@@ -30,6 +30,12 @@ Link naar website: [https://fine-turtleneck-shirt-lion.cyclic.app/](https://fine
 - Node js
 - JSON
 
+### Node js
+Uitleggen wat `Node js` is
+
+### Express EJS
+Uitleggen wat `Express` is en wat `EJS` doet.
+
 ## Installatie
 <!-- Bij Installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. -->
 Node installatie - Via Nodejs.org heb ik eerst Node js gedownload.
