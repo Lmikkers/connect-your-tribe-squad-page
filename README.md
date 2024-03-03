@@ -30,11 +30,19 @@ Link naar website: [https://fine-turtleneck-shirt-lion.cyclic.app/](https://fine
 - Node js
 - JSON
 
-### Node js
+### Wat is `Node js`
 Uitleggen wat `Node js` is
+Node.JS is een open-source, sever-side runtime-omgeving die het mogelijk maakt Javascript te gebruik buiten de browser.  
 
-### Express EJS
-Uitleggen wat `Express` is en wat `EJS` doet.
+Node.js is een open-source, server-side runtime-omgeving die JavaScript mogelijk maakt buiten de webbrowser. Het stelt ontwikkelaars in staat om JavaScript te gebruiken voor het bouwen van applicaties die kunnen draaien op servers. Met Node.js kunnen ontwikkelaars efficiënt omgaan met data en kunnen ze gebruikmaken van een breed scala aan handige functies. Het staat bekend om zijn snelheid en schaalbaarheid, waardoor het een populaire keuze is voor het ontwikkelen van zowel kleine scripts als grote, complexe applicaties.
+
+
+
+### Wat is `Express`
+Uitleggen wat `Express`
+
+### Wat doet `EJS`
+
 
 ## Installatie
 <!-- Bij Installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. -->
