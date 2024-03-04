@@ -47,19 +47,24 @@ Met EJS kun je dynamische inhoud genereren op basis van gegevens uit een databas
 
 ## Installatie
 <!-- Bij Installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. -->
-Node installatie - Via Nodejs.org heb ik eerst Node js gedownload.
-NPM installatie
-Om in de repository te werken en aanpassingen te maken moet je node.js downloaden.
-Clone of download deze respository.
-Open hem in je code-editor (Visal Studio Code).
-Open de terminal en typ npm install.
-Daarna kun je door middel van npm start een localhost krijgen met een link waar je de live site kunt bekijken.
-Het live zetten van je project kan met behulp van cyclic.
+1. Clone of download deze respository.
+2. Open hem in je code-editor (Visal Studio Code), kun je bij <code> doen
+4. Het project gebruikt Node, dus moeten we eerst Node instaleren, dit kan via Nodejs.org
+5. Open je code-editor en daarin de terminal (shortcut "control backtap") en type `npm install`
+6. Wanneer het geinstalleerd is kun je `npm start` gebruiken om de live site te bekijken via localhost.
+7. Je krijgt daarbij een link met localhost, waat je de site live kunt bekijken
+8. Als je andere aanpassingen doet dan html en css, dan moet je de live site stoppen door `control c` te gebruiken in de terminal en dan weer `npm start`
+9. Na je aanpassingen kun je de site live zetten met behulp van cyclic.
+
 
 ## Gebruik
+1. Open de link op een webbrowser: https://fine-turtleneck-shirt-lion.cyclic.app/
+2. Je ziet nu een menu met Squads en daaronder een slider met personen. Je kunt de personen filteren op squad als je op een squad klikt.
+3. De slider kun je door te scrollen en door de buttons te klikken gebruiken
+4. Door op een persoon te klikken ga je naar de persoonlijke pagina, daar kun je naar diegene zijn Github of berichtjes kijken/ versturen.
+
 
 ## Bronnen
 
 ## Licentie
-
 This project is licensed under the terms of the [MIT license](./LICENSE).
