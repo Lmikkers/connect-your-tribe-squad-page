@@ -32,17 +32,18 @@ Link naar website: [https://fine-turtleneck-shirt-lion.cyclic.app/](https://fine
 
 ### Wat is `Node js`
 Uitleggen wat `Node js` is
-Node.JS is een open-source, sever-side runtime-omgeving die het mogelijk maakt Javascript te gebruik buiten de browser.  
+Node.JS is een open-source, sever-side runtime-omgeving die het mogelijk maakt Javascript te gebruik buiten de browser. Ontwikkelaars kunnen daardoor gebruik maken van `Javascript` met het maken van sites/applicaties die kunnen draaien op servers. 
 
-Node.js is een open-source, server-side runtime-omgeving die JavaScript mogelijk maakt buiten de webbrowser. Het stelt ontwikkelaars in staat om JavaScript te gebruiken voor het bouwen van applicaties die kunnen draaien op servers. Met Node.js kunnen ontwikkelaars efficiënt omgaan met data en kunnen ze gebruikmaken van een breed scala aan handige functies. Het staat bekend om zijn snelheid en schaalbaarheid, waardoor het een populaire keuze is voor het ontwikkelen van zowel kleine scripts als grote, complexe applicaties.
+<!-- Node.js is een open-source, server-side runtime-omgeving die JavaScript mogelijk maakt buiten de webbrowser. Het stelt ontwikkelaars in staat om JavaScript te gebruiken voor het bouwen van applicaties die kunnen draaien op servers. Met Node.js kunnen ontwikkelaars efficiënt omgaan met data en kunnen ze gebruikmaken van een breed scala aan handige functies. Het staat bekend om zijn snelheid en schaalbaarheid, waardoor het een populaire keuze is voor het ontwikkelen van zowel kleine scripts als grote, complexe applicaties. -->
 
 
 
 ### Wat is `Express`
-Uitleggen wat `Express`
+`Express` is een webframeworks voor `Node js` waar je gemakkelijk API's en webapplicaties mee kunt bouwen. Express wordt vooral aan de server side gebruikt. Met Express kun je gemakkelijk routes aanmaken. Express is flexibel, het biedt ontwikkelaars de vrijheid om hun applicaties op een manier te structureren die het beste past bij hun behoeften. Door de eenvoud en  flexibiliteit is Express erg populair, ook bij beginners.
+
 
 ### Wat doet `EJS`
-
+Met EJS kun je dynamische inhoud genereren op basis van gegevens uit een database, wat de gebruiker invoert of andere bronnen. Hierdoor is de pagina niet statisch en veranderd de content door de gebruiker, buiten de code om. Met EJS kun je HTML-pagina's maken met ingesloten JavaScript-code die wordt gebruikt om variabelen in te voegen, waardoor je bijvoorbeeld een loop kunt maken met dynamische content.
 
 ## Installatie
 <!-- Bij Installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. -->
